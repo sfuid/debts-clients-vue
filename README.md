@@ -1,4 +1,4 @@
-# debts-clients-vue
+# debts-vue
 
 > Nuxt.js project
 
