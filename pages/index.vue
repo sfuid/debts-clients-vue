@@ -1,15 +1,18 @@
 <template>
-  <section class="container">
-    <Table />
-  </section>
+  <div>
+    <section class="container">
+      <h1>Список должников</h1>
+      <Debts />
+    </section>
+  </div>
 </template>
 
 <script>
-import Table from "~/components/Table/index.vue";
+import Debts from "~/components/Debts/index.vue";
 
 export default {
   components: {
-    Table
+    Debts
   }
 };
 </script>
