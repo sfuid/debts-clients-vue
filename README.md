@@ -1,5 +1,7 @@
 https://debts-vue.herokuapp.com
 
+> Nuxt.js project
+
 ## Installation
 
 ``` bash
