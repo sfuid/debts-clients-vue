@@ -32,9 +32,9 @@ export default {
   },
   data() {
     return {
+      data: [],
       api: new Api(this),
       host: this.$store.state.host,
-      data: [],
       columns: columns(this),
       loading: false,
       pagination: {
