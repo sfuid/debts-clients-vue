@@ -1,5 +1,10 @@
 ﻿import axios from 'axios';
 
+/**
+ * @class
+ * @constructor
+ * @param self - context
+ */
 export default class Api {
   constructor(self) {
     this.self = self;
