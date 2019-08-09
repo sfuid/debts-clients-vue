@@ -20,7 +20,7 @@ export default class Api {
   updatePerson(id_person, fio) {
     this.self.loading = true;
 
-    axios.put(`${this.host}/person/`, { id_person, fio }).then(response => {
+    axios.put(`${this.self.host}/person/`, { id_person, fio }).then(response => {
       this.self.loading = false;
     });
   }
