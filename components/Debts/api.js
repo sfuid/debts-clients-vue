@@ -3,30 +3,36 @@
 /**
  * @class
  * @constructor
- * @param self - context
+ * @param ctx - context
  */
 export default class Api {
-  constructor(self) {
-    this.self = self;
+  constructor(ctx) {
+    this.ctx = ctx;
   }
 
   getDebts() {
-    this.self.loading = true;
-    const pag = this.self.pagination;
+    const ctx = this.ctx;
+    const pag = ctx.pagination;
     const offset = pag.current * pag.pageSize - pag.pageSize;
+    ctx.loading = true;
 
-    axios.get(`${this.self.host}/debts?limit=${pag.pageSize}&offset=${offset}`).then(response => {
-      this.self.pagination.total = response.data.count;
-      this.self.data = response.data.rows;
-      this.self.loading = false;
+    axios
+    .get(`${this.ctx.host}/debts?limit=${pag.pageSize}&offset=${offset}`)
+    .then(response => {
+      ctx.pagination.total = response.data.count;
+      ctx.data = response.data.rows;
+      ctx.loading = false;
     });
   }
 
   updatePerson(id_person, fio) {
-    this.self.loading = true;
+    const ctx = this.ctx;
+    ctx.loading = true;
 
-    axios.put(`${this.self.host}/person/`, { id_person, fio }).then(response => {
-      this.self.loading = false;
+    axios
+    .put(`${ctx.host}/person/`, { id_person, fio })
+    .then(response => {
+      ctx.loading = false;
     });
   }
 }
