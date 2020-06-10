@@ -17,12 +17,12 @@ export default class Api {
     ctx.loading = true;
 
     axios
-    .get(`${this.ctx.host}/debts?limit=${pag.pageSize}&offset=${offset}`)
-    .then(response => {
-      ctx.pagination.total = response.data.count;
-      ctx.data = response.data.rows;
-      ctx.loading = false;
-    });
+      .get(`${this.ctx.host}/debts?sum=${ctx.sum}&limit=${pag.pageSize}&offset=${offset}`)
+      .then(response => {
+        ctx.pagination.total = response.data.count;
+        ctx.data = response.data.rows;
+        ctx.loading = false;
+      });
   }
 
   updatePerson(id_person, fio) {
@@ -30,9 +30,9 @@ export default class Api {
     ctx.loading = true;
 
     axios
-    .put(`${ctx.host}/person/`, { id_person, fio })
-    .then(response => {
-      ctx.loading = false;
-    });
+      .put(`${ctx.host}/person/`, { id_person, fio })
+      .then(response => {
+        ctx.loading = false;
+      });
   }
 }
