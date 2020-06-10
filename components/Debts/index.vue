@@ -9,7 +9,7 @@
         :min="100"
         :max="1000"
       />
-      <Button v-on:click="api.getDebts()">Установить минимальную сумма</Button>
+      <Button v-on:click="api.getDebts()">Установить минимальную сумму</Button>
     </div>
 
     <Table
