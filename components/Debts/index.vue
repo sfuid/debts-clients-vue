@@ -9,7 +9,7 @@
         :min="100"
         :max="1000"
       />
-      <Button v-on:click="api.getDebts()">Установить минимальную сумму</Button>
+      <Button v-on:click="api.getDebts()">Минимальная сумма</Button>
     </div>
 
     <Table
@@ -32,7 +32,7 @@
 <script>
 import Api from "./api.js";
 import { columns } from "./columns.js";
-import { Table, InputNumber, Button } from "ant-design-vue";
+import { Table, InputNumber, Button, Icon } from "ant-design-vue";
 import EditableCell from "~/components/EditableCell";
 import "./assets/style.less";
 
@@ -41,7 +41,8 @@ export default {
     Table,
     InputNumber,
     EditableCell,
-    Button
+    Button,
+    Icon
   },
   mounted() {
     this.api.getDebts();
